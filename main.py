@@ -1,10 +1,11 @@
 def encode(x):
+    res = ""
     for i in x:
-        i = int(i) + 3
-        if i >= 10:
-            i = i - 10
-        print(i, end='')
-    return ''
+        temp = int(i) + 3
+        if temp >= 10:
+            temp = temp - 10
+        res += str(temp)
+    return res
 
 def decode(x):
     pass
@@ -21,11 +22,14 @@ while True:
     option = int(input("Please enter an option: "))
     if option == 1:
         password = input("Please enter your password to encode: ")
+        x = encode(password)
     print("Your password has been encoded and stored!")
-    print()
+
 
     if option == 2:
-        pass
+        print(f"The encoded password is {x}")
 
     if option == 3:
         break
+
+
