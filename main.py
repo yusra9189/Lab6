@@ -8,7 +8,11 @@ def encode(x):
     return res
 
 def decode(x):
-    pass
+    res = ''
+    for i in x:
+        temp = (int(i) - 3) % 10
+        res += str(temp)
+    return res
 
 
 while True:
@@ -27,7 +31,8 @@ while True:
 
 
     if option == 2:
-        print(f"The encoded password is {encoded}")
+        x = decode(encoded)
+        print(f"The encoded password is {encoded}, and the original password is {x}")
 
     if option == 3:
         break
