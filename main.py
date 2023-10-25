@@ -7,12 +7,22 @@ def encode(x):
         res += str(temp)
     return res
 
+
 def decode(x):
     res = ''
     for i in x:
         temp = (int(i) - 3) % 10
         res += str(temp)
     return res
+
+# Decoder Function
+def decode(encoded_password):
+    decoded_password = ""
+    for digit in encoded_password:
+        original_digit = str((int(digit) - 3) % 10)
+        decoded_password += original_digit
+    return decoded_password
+
 
 
 while True:
@@ -29,10 +39,9 @@ while True:
         encoded = encode(password)
     print("Your password has been encoded and stored!")
 
-
     if option == 2:
-        x = decode(encoded)
-        print(f"The encoded password is {encoded}, and the original password is {x}")
+        decoded = decode(encoded)
+        print(f"The encoded password is {encoded}, and the original password is {decoded}")
 
     if option == 3:
         break
